@@ -95,6 +95,10 @@ DATABASES = {
 
 # 指定django认证系统使用的模型类
 AUTH_USER_MODEL='user.User'
+# 设置不检测用户的活跃状体
+AUTHENTICATION_BACKENDS = [
+'django.contrib.auth.backends.AllowAllUsersModelBackend']
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -150,3 +154,17 @@ EMAIL_HOST_USER = 'han_yin9@163.com'
 EMAIL_HOST_PASSWORD = 'yinhan4321'
 # 收件人看到的发件人
 EMAIL_FROM = '天天生鲜测试项目<han_yin9@163.com>'
+
+# Django的缓存配置
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/8",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+# Redis作为session配置
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
