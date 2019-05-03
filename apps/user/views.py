@@ -6,6 +6,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 from django.conf import settings
 from django.core.mail import send_mail
+from celery_tasks.tasks import send_register_active_email
 import re
 
 
@@ -55,12 +56,7 @@ class RegisterView(View):
 		token = serializer.dumps(info).decode('utf-8')
 
 		# 发送邮件
-		subject = '天天生鲜会员注册信息' # 邮件的主题
-		message = '' # 邮件正文，会被html_message覆盖
-		from_email = settings.EMAIL_FROM # 邮件的发件人
-		reciever = [email] # 收件人列表
-		html_message = '<h1>{}，欢迎注册</h1> <p>请点击以下链接完成账号激活<a href="http://127.0.0.1:8000/user/active/{}">http://127.0.0.1:8000/user/active/{}</a></p>'.format(user_name, token, token) # 按照html文档规则解析内容
-		send_mail(subject, message, from_email, reciever, html_message=html_message)
+		send_register_active_email.delay(email, user_name, token)
 
 		return redirect(reverse('goods:index'))
 
