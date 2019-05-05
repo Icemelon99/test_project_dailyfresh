@@ -6,7 +6,8 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 from django.conf import settings
 from celery_tasks.tasks import send_register_active_email
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 import re
 
 
@@ -100,6 +101,8 @@ class LoginView(View):
 		username = request.POST.get('username')
 		password = request.POST.get('pwd')
 		remember = request.POST.get('remember')
+		# 获取登录后所要跳转到的地址，默认跳转到首页
+		next_url = request.GET.get('next', reverse('goods:index'))
 
 		if not all([username, password]):
 			return render(request, 'login.html', {'errmsg': '信息填写不完整'})
@@ -111,7 +114,7 @@ class LoginView(View):
 				# 用户已激活
 				# 记录用户的登录状态
 				login(request, user)
-				response = redirect(reverse('goods:index'))
+				response = redirect(next_url)
 				# 判断是否需要记住用户名
 				if remember == 'on':
 					response.set_cookie('username', username, max_age=7*24*3600)
@@ -125,4 +128,33 @@ class LoginView(View):
 		else:
 			# 用户名或密码错误
 			return render(request, 'login.html', {'errmsg': '用户名或密码错误'})
+
+# /user/logout
+class LogOutView(View):
+	def get(self, request):
+		logout(request)
+		return redirect(reverse('goods:index'))
+
+
+# /user
+class UserInfoView(LoginRequiredMixin, View):
+	def get(self, request):
+		'''显示个人信息'''
+		page = 'user'
+		return render(request, 'user_center_info.html', {'page': page})
+
+# /user/order
+class UserOrderView(LoginRequiredMixin, View):
+	def get(self, request):
+		'''显示个人订单'''
+		page = 'order'
+		return render(request, 'user_center_order.html', {'page': page})
+
+# /user/address
+class UserAddressView(LoginRequiredMixin, View):
+	def get(self, request):
+		'''显示个人地址'''
+		page = 'address'
+		return render(request, 'user_center_site.html', {'page': page})
+
 
