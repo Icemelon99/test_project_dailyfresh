@@ -7,7 +7,9 @@ from tinymce.models import HTMLField
 class GoodsType(BaseModel):
     '''商品类型模型类'''
     name = models.CharField(max_length=20, verbose_name='种类名称')
+    # 是一个雪碧图，因此属于CSS，其在数据库中保存的是class属性名称
     logo = models.CharField(max_length=20, verbose_name='标识')
+    # 其中upload_to是默认存储类的参数，自定义存储类后不起作用
     image = models.ImageField(upload_to='type', verbose_name='商品类型图片')
 
     class Meta:

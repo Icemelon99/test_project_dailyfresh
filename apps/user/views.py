@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
-from user.models import User
+from user.models import User, Address
+from goods.models import GoodsSKU
 from django.views import View
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
@@ -8,6 +9,7 @@ from django.conf import settings
 from celery_tasks.tasks import send_register_active_email
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django_redis import get_redis_connection
 import re
 
 
@@ -141,7 +143,25 @@ class UserInfoView(LoginRequiredMixin, View):
 	def get(self, request):
 		'''显示个人信息'''
 		page = 'user'
-		return render(request, 'user_center_info.html', {'page': page})
+		user = request.user
+		address	= Address.objects.get_default_address(user)
+		# 获取用户的历史浏览记录
+		# 是StrictRedis的实例对象，参数为settings中设置的参数
+		con = get_redis_connection('default')
+		# 在redis中以history_id为key，值为list类型
+		history_key = 'history_{}'.format(user.id)
+		# 获取最近浏览的5个sku商品id，得到一个sku_id列表，[3,1,2]
+		sku_ids = con.lrange(history_key, 0, 4)
+		# 从数据库中查询用户浏览的具体信息
+		goods_li = list()
+		for id in sku_ids:
+			goods_li.append(GoodsSKU.objects.get(id=id))
+
+		context = {'page': page, 
+				   'address': address,
+				   'goods_li': goods_li,}
+
+		return render(request, 'user_center_info.html', context)
 
 # /user/order
 class UserOrderView(LoginRequiredMixin, View):
@@ -155,6 +175,45 @@ class UserAddressView(LoginRequiredMixin, View):
 	def get(self, request):
 		'''显示个人地址'''
 		page = 'address'
-		return render(request, 'user_center_site.html', {'page': page})
+		user = request.user
+		# 使用自定义的模型管理器类
+		address	= Address.objects.get_default_address(user)
+		return render(request, 'user_center_site.html', {'page': page, 'address': address})
 
+	def post(self, request):
+		'''地址的添加'''
+		receiver = request.POST.get('receiver')
+		addr = request.POST.get('addr')
+		zipcode = request.POST.get('zipcode')
+		phone = request.POST.get('phone')
+		if not all([receiver, addr, phone]):
+			# 解决直接render时默认地址无法显示的问题，如下手机号不规范直接render后page/address参数都没有传入，因此获取不到，也可使用js在模板上解决
+			page = 'address'
+			user = request.user
+			address	= Address.objects.get_default_address(user)
+			return render(request, 'user_center_site.html', {'page': page, 'address': address, 'errmsg': '数据不完整，请重新输入'})
+		# 校验手机号
+		if not re.match(r'^1[3|4|5|7|8][0-9]{9}$', phone):
+			return render(request, 'user_center_site.html', {'errmsg': '手机号不合法，请重新输入'})
 
+		# 获取登录用户对应的User实例对象
+		user = request.user
+		# 使用自定义的模型管理器类
+		address	= Address.objects.get_default_address(user)
+		# 判断新添加的地址是否为收货地址
+		if address:
+			is_default = False
+		else:
+			is_default = True
+
+		# 添加收货地址
+		Address.objects.create(user=user, 
+							   receiver=receiver, 
+							   addr=addr, 
+							   zip_code=zipcode, 
+							   phone=phone, 
+							   is_default=is_default)
+		# 返回应答，刷新地址页面，以get方式再访问当前页面
+		return redirect(reverse('user:address'))
+
+		#此处可以添加让用户在多个收货地址中选择默认收货地址的功能，需要在模板中显示用户的所有收货地址

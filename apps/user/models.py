@@ -13,6 +13,21 @@ class User(AbstractUser, BaseModel):
 		verbose_name = '用户'
 		verbose_name_plural = verbose_name
 
+
+class AddressManager(models.Manager):
+	# 重定义继承自默认Manager中的方法，即User.objects.all()，此处自定义的模型管理器类取代的是 User.objects
+	# 使用self.model取代模型类名，如此可以将自定义的管理器对象应用于多个模型类中
+	def get_default_address(self, user):
+		try:
+			# self 即模型管理器类对象，直接支持get方法，无需self.model.objects
+			# 此处使用的user参数是传入的，由于创建self时已经确定了模型类，因此其中的字段名无需传入
+			address = self.get(user=user, is_default=True)
+		except self.model.DoesNotExist:
+			# 不存在默认收货地址
+			address = None
+		return address
+
+
 class Address(BaseModel):
 	'''用户收件地址模型类
 	   注意区分字段与Meta中verbose_name不同'''
@@ -22,6 +37,7 @@ class Address(BaseModel):
 	zip_code = models.CharField(max_length=6, null=True, verbose_name='邮政编码')
 	phone = models.CharField(max_length=11, verbose_name='联系电话')
 	is_default = models.BooleanField(default=False, verbose_name='是否默认')	
+	objects = AddressManager()
 
 	class Meta:
 		db_table = 'df_address'
