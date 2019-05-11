@@ -37,6 +37,8 @@ class GoodsSKU(BaseModel):
     stock = models.IntegerField(default=1, verbose_name='商品库存')
     sales = models.IntegerField(default=0, verbose_name='商品销量')
     status = models.SmallIntegerField(default=1, choices=status_choices, verbose_name='商品状态')
+    def __str__(self):
+        return self.name
 
     class Meta:
         db_table = 'df_goods_sku'
