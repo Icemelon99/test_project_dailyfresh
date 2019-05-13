@@ -105,7 +105,7 @@ class LoginView(View):
 		remember = request.POST.get('remember')
 		# 获取登录后所要跳转到的地址，默认跳转到首页
 		next_url = request.GET.get('next', reverse('goods:index'))
-
+		response = redirect(next_url)
 		if not all([username, password]):
 			return render(request, 'login.html', {'errmsg': '信息填写不完整'})
 
@@ -116,7 +116,7 @@ class LoginView(View):
 				# 用户已激活
 				# 记录用户的登录状态
 				login(request, user)
-				response = redirect(next_url)
+				
 				# 判断是否需要记住用户名
 				if remember == 'on':
 					response.set_cookie('username', username, max_age=7*24*3600)

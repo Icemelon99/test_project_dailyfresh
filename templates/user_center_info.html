@@ -21,7 +21,7 @@
 				{% for goods in goods_li %}
 				<li>
 					{# 使用分布式文件存储系统 #}
-					<a href="detail.html"><img src="goods.image.url"></a>
+					<a href="{% url 'goods:detail' goods.id %}"><img src="{{ goods.image.url }}"></a>
 					<h4><a href="detail.html">{{ goods.name }}</a></h4>
 					<div class="operate">
 						<span class="prize">{{ goods.price }}</span>
