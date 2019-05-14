@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+{{type_current}}
+{{skus_page}}
+				<br>
+				{% if skus_page.has_previous %}
+					<a href="{% url 'goods:list' type_current.id skus_page.previous_page_number %}?sort={{ sort }}"><上一页</a>
+				{% endif %}
+
+				{% for pindex in skus_page.paginator.page_range %}
+					{% if pindex == skus_page.number %}
+						<a href="{% url 'goods:list' type_current.id pindex %}?sort={{ sort }}" class="active">{{ pindex }}</a>
+					{% else %}
+						<a href="{% url 'goods:list' type_current.id pindex %}?sort={{ sort }}">{{ pindex }}</a>
+					{% endif %}
+				{% endfor %}
+
+				{% if skus_page.has_next %}
+					<a href="{% url 'goods:list' type_current.id skus_page.next_page_number %}?sort={{ sort }}">下一页></a>
+				{% endif %}
+</body>
+</html>

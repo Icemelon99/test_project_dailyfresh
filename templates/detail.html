@@ -6,7 +6,7 @@
 
 {% block main_content %}
 	<div class="breadcrumb">
-		<a href="#">全部分类</a>
+		<a href="{% url 'goods:index' %}">全部分类</a>
 		<span>></span>
 		<a href="#">{{ sku.types.name }}</a>
 		<span>></span>
