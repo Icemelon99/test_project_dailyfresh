@@ -1,0 +1,6 @@
+# 指定根据表中的哪些字段建立索引
+# 其中可以使用外键等链接到其他表的字段
+
+{{ object.name }}
+{{ object.desc }}
+{{ object.spu.detail }}
