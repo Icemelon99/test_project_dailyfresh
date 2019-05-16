@@ -41,8 +41,9 @@
 			</div>
 			<div class="total">总价：<em>16.80元</em></div>
 			<div class="operate_btn">
+				{% csrf_token %}
 				<a href="javascript:;" class="buy_btn">立即购买</a>
-				<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>				
+				<a href="javascript:;" sku_id="{{ sku.id }}" class="add_cart" id="add_cart">加入购物车</a>				
 			</div>
 		</div>
 	</div>
@@ -95,25 +96,84 @@
 {% endblock bottom %}
 
 {% block bottomfiles %}
-	<script type="text/javascript" src="{% static 'js/jquery-1.12.2.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
 	<script type="text/javascript">
+		//计算商品的总价
+		update_goods_amount();
+		function update_goods_amount(){
+			//获取商品的单价和数量
+			price = $('.show_pirze').children('em').text();
+			count = $('.num_show').val();
+			//计算商品的总价，先将获取的值转换为浮点数和整数
+			price = parseFloat(price);
+			count = parseInt(count);
+			amount = price*count;
+			//设置商品的总价，并设置转换为保留两位小数的字符串
+			$('.total').children('em').text(amount.toFixed(2)+'元');
+		};
+		
+		//增加与减少商品数量，直接对相应的元素设置其click事件为函数，可不对函数进行命名
+		$('.add').click(function(){
+			//获取商品原有的数目，并对其数目进行更新
+			count = $('.num_show').val();
+			count = parseInt(count)+1;
+			$('.num_show').val(count);
+			//更新总价
+			update_goods_amount();
+		});
+		$('.minus').click(function(){
+			//获取商品原有的数目，并对其数目进行更新
+			count = $('.num_show').val();
+			count = parseInt(count)-1;
+			if (count <= 0){count = 1;};
+			$('.num_show').val(count);
+			//更新总价
+			update_goods_amount();
+		});
+
+		//手动输入商品的数量
+		$('.num_show').blur(function(){
+			//获取用户输入的数目
+			count = $(this).val();
+			//检验count是否合法
+			if(isNaN(count) || count.trim().length==0 || parseInt(count)<=0){count=1};
+			//重新设置商品的数目
+			$(this).val(parseInt(count));
+			//更新商品的总价
+			update_goods_amount();
+		});
+
+		//获取add_cart div元素(添加按钮)左上角的坐标
 		var $add_x = $('#add_cart').offset().top;
 		var $add_y = $('#add_cart').offset().left;
-
+		//获取show_count div元素(右上角购物车栏)左上角的坐标
 		var $to_x = $('#show_count').offset().top;
 		var $to_y = $('#show_count').offset().left;
 
-		$(".add_jump").css({'left':$add_y+80,'top':$add_x+10,'display':'block'})
+		
 		$('#add_cart').click(function(){
-			$(".add_jump").stop().animate({
-				'left': $to_y+7,
-				'top': $to_x+7},
-				"fast", function() {
-					$(".add_jump").fadeOut('fast',function(){
-						$('#show_count').html(2);
+			//获取商品id及数量
+			sku_id = $(this).attr('sku_id');
+			count = $('.num_show').val();
+			csrf = $("input[name='csrfmiddlewaretoken']").val();
+			//组织参数，发起ajax post请求
+			params = {'sku_id':sku_id, 'count':count, 'csrfmiddlewaretoken':csrf};
+			$.post('/cart/add/', params, function (data) {
+				if(data.res==5){
+					//添加成功
+					$(".add_jump").css({'left':$add_y+80,'top':$add_x+10,'display':'block'})
+					$(".add_jump").stop().animate({
+						'left': $to_y+7,
+						'top': $to_x+7},
+						"fast", function() {
+							$(".add_jump").fadeOut('fast',function(){
+								//刷新用户购物车当前数目
+								$('#show_count').html(data.total_count);
+							});
 					});
-
-			});
+				}
+				else{alert(data.errmsg)};
+			})
 		})
 	</script>
 {% endblock bottomfiles %}
