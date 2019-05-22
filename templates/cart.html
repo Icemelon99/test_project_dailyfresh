@@ -67,7 +67,7 @@
 				amount = $(this).find('.col07').text();
 				//累加计算商品的总件数和总价格
 				count = parseInt(count);
-				amount = parseInt(amount);
+				amount = parseFloat(amount);
 				total_count += count;
 				total_price += amount;
 			});

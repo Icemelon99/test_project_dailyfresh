@@ -7,6 +7,6 @@ urlpatterns = [
 	path('login/', LoginView.as_view(), name='login'),
 	path('logout/', LogOutView.as_view(), name='logout'),
 	path('', UserInfoView.as_view(), name='user'),
-	path('order/', UserOrderView.as_view(), name='order'),
+	re_path('order/(?P<page>[0-9]+)', UserOrderView.as_view(), name='order'),
 	path('address/', UserAddressView.as_view(), name='address'),
 ]

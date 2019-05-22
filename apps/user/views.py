@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
 from user.models import User, Address
 from goods.models import GoodsSKU
+from order.models import OrderInfo, OrderGoods
 from django.views import View
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
@@ -9,6 +10,7 @@ from django.conf import settings
 from celery_tasks.tasks import send_register_active_email
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 from django_redis import get_redis_connection
 import re
 
@@ -165,10 +167,55 @@ class UserInfoView(LoginRequiredMixin, View):
 
 # /user/order
 class UserOrderView(LoginRequiredMixin, View):
-	def get(self, request):
+	def get(self, request, page):
 		'''显示个人订单'''
-		page = 'order'
-		return render(request, 'user_center_order.html', {'page': page})
+		user = request.user
+		orders = OrderInfo.objects.filter(user=user).order_by('-create_time')
+		# 遍历获取订单商品的信息
+		for order in orders:
+			# 根据order_id查询订单商品的信息，并动态增加商品信息属性
+			order_skus = OrderGoods.objects.filter(order_id=order.order_id)
+			# 遍历order_skus计算商品的小计，并动态增加小计
+			for order_sku in order_skus:
+				amount = order_sku.count*order_sku.price
+				order_sku.amount = amount
+			order.order_skus = order_skus
+			# 将支付状态从对应字典中取出，并赋予属性
+			order.status_name = OrderInfo.ORDER_STATUS[order.order_status]
+			order.pay_method_name = OrderInfo.PAY_METHOD[order.pay_method]
+			order.total_amount = order.total_price+order.transit_price
+		paginator = Paginator(orders, 2)
+		# 获取要求页码的内容
+		try:
+			page = int(page)
+		except Exception as e:
+			page = 1
+		# 判断页码是否超出
+		if page > paginator.num_pages:
+			page = 1
+
+		# 获取指定页码的内容
+		order_page = paginator.page(page)
+		# 至多显示5个页码，显示当前页的前两页和后两页
+		# 1.页面小于5页，页面上显示所有页码
+		# 2.当前页是前3页，显示1-5页
+		# 3.当前页是后3页，显示后5页
+		# 4.其余：显示当前页的前两页和后两页
+		# 5.添加跳转到第几页和最后一页的按钮，后续实现
+		num_pages = paginator.num_pages
+		if num_pages <= 5:
+			pages = range(1, num_pages+1)
+		elif page <= 3:
+			pages = range(1, 6)
+		elif num_pages-page <= 2:
+			pages = range(num_pages-4, num_pages+1)
+		else:
+			pages = range(page-2, page+3)
+		# 组织上下文
+		context = {'order_page': order_page,
+				   'pages': pages,
+				   'page': 'order',}
+		return render(request, 'user_center_order.html', context)
 
 # /user/address
 class UserAddressView(LoginRequiredMixin, View):

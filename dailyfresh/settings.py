@@ -177,8 +177,8 @@ DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FDFSStorage'
 # 设置fdfs所需要的参数
 FDFS_CLIENT_OPTION = {
     'FDFS_CLIENT_CONF': './utils/fdfs/client.conf',
-    'BASE_URL': 'http://192.168.85.167:8888/',
-    'SERVER_IP': '192.168.85.167',
+    'BASE_URL': 'http://192.168.85.177:8888/',
+    'SERVER_IP': '192.168.85.177',
 }
 
 # 配置全文检索引擎的使用

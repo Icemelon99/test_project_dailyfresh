@@ -13,7 +13,7 @@
 					{% if page == 'user' %} 
 					class="active" 
 					{% endif %}>· 个人信息</a></li>
-				<li><a href="{% url 'user:order' %}"
+				<li><a href="{% url 'user:order' 1 %}"
 					{% if page == 'order' %} 
 					class="active" 
 					{% endif %}>· 全部订单</a></li>
