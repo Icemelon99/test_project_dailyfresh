@@ -26,7 +26,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = 'b*@jq3o&62vyixmjlvteq&fi@+qa^c#s(cy-x+6#1idh1ubg5v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -138,6 +138,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = '/var/www/dailyfresh/static'
 
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
@@ -177,8 +178,8 @@ DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FDFSStorage'
 # 设置fdfs所需要的参数
 FDFS_CLIENT_OPTION = {
     'FDFS_CLIENT_CONF': './utils/fdfs/client.conf',
-    'BASE_URL': 'http://192.168.85.177:8888/',
-    'SERVER_IP': '192.168.85.177',
+    'BASE_URL': 'http://192.168.85.178:8888/',
+    'SERVER_IP': '192.168.85.178',
 }
 
 # 配置全文检索引擎的使用

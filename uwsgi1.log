@@ -1,0 +1,107 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 14:28:23 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi1.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8081 fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x5573ce19ade0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5573ce19ade0 pid: 4457 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4457)
+spawned uWSGI worker 1 (pid: 4460, cores: 2)
+spawned uWSGI worker 2 (pid: 4461, cores: 2)
+spawned uWSGI worker 3 (pid: 4462, cores: 2)
+spawned uWSGI worker 4 (pid: 4464, cores: 2)
+[pid: 4461|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 838 bytes} [Fri May 24 14:33:15 2019] GET /goods/1 => generated 8810 bytes in 734 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 4462|app: 0|req: 1/2] 127.0.0.1 () {44 vars in 839 bytes} [Fri May 24 14:33:33 2019] GET /goods/5 => generated 8839 bytes in 643 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 4462|app: 0|req: 2/3] 127.0.0.1 () {44 vars in 838 bytes} [Fri May 24 14:34:24 2019] GET /user/ => generated 4643 bytes in 55 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4461|app: 0|req: 2/4] 127.0.0.1 () {44 vars in 838 bytes} [Fri May 24 14:34:48 2019] GET /user/ => generated 4643 bytes in 66 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4461|app: 0|req: 3/5] 127.0.0.1 () {44 vars in 845 bytes} [Fri May 24 14:34:55 2019] GET /cart/info/ => generated 11108 bytes in 35 msecs (HTTP/1.1 200) 5 headers in 293 bytes (1 switches on core 0)
+[pid: 4464|app: 0|req: 1/6] 127.0.0.1 () {42 vars in 828 bytes} [Fri May 24 14:35:20 2019] GET / => generated 77 bytes in 580 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 4461|app: 0|req: 4/7] 127.0.0.1 () {44 vars in 852 bytes} [Fri May 24 14:35:55 2019] GET / => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 4462|app: 0|req: 3/8] 127.0.0.1 () {42 vars in 842 bytes} [Fri May 24 14:36:17 2019] GET /goods/2 => generated 8440 bytes in 51 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 4464|app: 0|req: 2/9] 127.0.0.1 () {42 vars in 840 bytes} [Fri May 24 14:36:41 2019] GET /admin/ => generated 0 bytes in 77 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 1)
+[pid: 4462|app: 0|req: 4/10] 127.0.0.1 () {42 vars in 794 bytes} [Fri May 24 14:36:42 2019] GET /favicon.ico => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 4461|app: 0|req: 5/11] 127.0.0.1 () {46 vars in 929 bytes} [Fri May 24 14:36:46 2019] GET /admin/ => generated 9064 bytes in 78 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 0)
+[pid: 4461|app: 0|req: 6/12] 127.0.0.1 () {42 vars in 758 bytes} [Fri May 24 14:36:48 2019] GET /admin/jsi18n/ => generated 7722 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 4464|app: 0|req: 3/13] 127.0.0.1 () {42 vars in 768 bytes} [Fri May 24 14:36:49 2019] GET /admin/jsi18n/ => generated 7722 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 4464|app: 0|req: 4/14] 127.0.0.1 () {46 vars in 1193 bytes} [Fri May 24 14:37:04 2019] GET /admin/goods/goodsspu/ => generated 10929 bytes in 115 msecs (HTTP/1.1 200) 8 headers in 480 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 14:43:45 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi1.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8081 fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x56516ff18de0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x56516ff18de0 pid: 5642 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5642)
+spawned uWSGI worker 1 (pid: 5644, cores: 2)
+spawned uWSGI worker 2 (pid: 5645, cores: 2)
+spawned uWSGI worker 3 (pid: 5646, cores: 2)
+spawned uWSGI worker 4 (pid: 5648, cores: 2)
+[pid: 5644|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 881 bytes} [Fri May 24 14:44:06 2019] GET /goods/3 => generated 8765 bytes in 660 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5645|app: 0|req: 1/2] 127.0.0.1 () {44 vars in 882 bytes} [Fri May 24 14:44:15 2019] GET /goods/5 => generated 8837 bytes in 674 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 909 bytes} [Fri May 24 14:45:38 2019] GET /admin/goods/goodsspu/ => generated 10744 bytes in 652 msecs (HTTP/1.1 200) 7 headers in 396 bytes (1 switches on core 0)
+[pid: 5645|app: 0|req: 2/4] 127.0.0.1 () {44 vars in 944 bytes} [Fri May 24 14:45:40 2019] GET /admin/goods/goodsspu/27/change/ => generated 8412 bytes in 91 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 5648|app: 0|req: 2/5] 127.0.0.1 () {52 vars in 1133 bytes} [Fri May 24 14:45:46 2019] POST /admin/goods/goodsspu/27/change/ => generated 0 bytes in 121 msecs (HTTP/1.1 302) 8 headers in 534 bytes (1 switches on core 1)
+[pid: 5648|app: 0|req: 3/6] 127.0.0.1 () {42 vars in 758 bytes} [Fri May 24 14:45:46 2019] GET /admin/jsi18n/ => generated 7722 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 5645|app: 0|req: 3/7] 127.0.0.1 () {46 vars in 965 bytes} [Fri May 24 14:52:00 2019] GET /admin/goods/goodsspu/ => generated 10744 bytes in 80 msecs (HTTP/1.1 200) 7 headers in 396 bytes (1 switches on core 0)
+[pid: 5645|app: 0|req: 4/8] 127.0.0.1 () {44 vars in 944 bytes} [Fri May 24 14:52:01 2019] GET /admin/goods/goodsspu/25/change/ => generated 8412 bytes in 34 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 5645|app: 0|req: 5/9] 127.0.0.1 () {52 vars in 1133 bytes} [Fri May 24 14:52:06 2019] POST /admin/goods/goodsspu/25/change/ => generated 0 bytes in 103 msecs (HTTP/1.1 302) 8 headers in 534 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 4/10] 127.0.0.1 () {42 vars in 758 bytes} [Fri May 24 14:52:06 2019] GET /admin/jsi18n/ => generated 7722 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 5646|app: 0|req: 1/11] 127.0.0.1 () {44 vars in 881 bytes} [Fri May 24 14:54:55 2019] GET /goods/1 => generated 8808 bytes in 789 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 5/12] 127.0.0.1 () {44 vars in 837 bytes} [Fri May 24 14:56:54 2019] GET /user/ => generated 0 bytes in 14 msecs (HTTP/1.1 302) 5 headers in 160 bytes (1 switches on core 0)
+[pid: 5648|app: 0|req: 6/13] 127.0.0.1 () {44 vars in 851 bytes} [Fri May 24 14:58:17 2019] GET /user/order/1 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 167 bytes (1 switches on core 1)
+[pid: 5648|app: 0|req: 7/14] 127.0.0.1 () {44 vars in 849 bytes} [Fri May 24 15:03:21 2019] GET /user/login/ => generated 2088 bytes in 8 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5648|app: 0|req: 8/15] 127.0.0.1 () {44 vars in 845 bytes} [Fri May 24 15:03:27 2019] GET /cart.html => generated 77 bytes in 11 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 5645|app: 0|req: 6/16] 127.0.0.1 () {44 vars in 872 bytes} [Fri May 24 15:03:33 2019] GET /user/login/?next=/user/ => generated 2088 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5646|app: 0|req: 2/17] 127.0.0.1 () {42 vars in 796 bytes} [Fri May 24 15:04:47 2019] GET /index/ => generated 12684 bytes in 153 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 5648|app: 0|req: 9/18] 127.0.0.1 () {52 vars in 1029 bytes} [Fri May 24 15:04:53 2019] POST /user/login/ => generated 0 bytes in 147 msecs (HTTP/1.1 302) 8 headers in 540 bytes (1 switches on core 1)
+[pid: 5645|app: 0|req: 7/19] 127.0.0.1 () {44 vars in 881 bytes} [Fri May 24 15:04:56 2019] GET /goods/5 => generated 8837 bytes in 76 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)

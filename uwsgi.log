@@ -1,0 +1,421 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 12:25:57 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8080 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:35451 (port auto-assigned) fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x558e399acea0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x558e399acea0 pid: 1848 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1848)
+spawned uWSGI worker 1 (pid: 1850, cores: 2)
+spawned uWSGI worker 2 (pid: 1851, cores: 2)
+spawned uWSGI worker 3 (pid: 1853, cores: 2)
+spawned uWSGI worker 4 (pid: 1855, cores: 2)
+spawned uWSGI http 1 (pid: 1856)
+Not Found: /
+[pid: 1855|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 790 bytes} [Fri May 24 12:26:24 2019] GET / => generated 3034 bytes in 1295 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 1855|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 736 bytes} [Fri May 24 12:26:26 2019] GET /favicon.ico => generated 3085 bytes in 14 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 1853|app: 0|req: 1/3] 127.0.0.1 () {38 vars in 800 bytes} [Fri May 24 12:26:30 2019] GET /index => generated 0 bytes in 552 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 0)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 1853|app: 0|req: 2/4] 127.0.0.1 () {38 vars in 802 bytes} [Fri May 24 12:26:31 2019] GET /index/ => generated 12677 bytes in 590 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+Not Found: /static/css/main.css
+[pid: 1853|app: 0|req: 3/5] 127.0.0.1 () {38 vars in 736 bytes} [Fri May 24 12:26:31 2019] GET /static/css/main.css => generated 3109 bytes in 12 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/js/jquery-ui.min.js
+[pid: 1855|app: 0|req: 4/6] 127.0.0.1 () {38 vars in 735 bytes} [Fri May 24 12:26:31 2019] GET /static/js/jquery-ui.min.js => generated 3130 bytes in 21 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/images/logo.png
+[pid: 1855|app: 0|req: 4/7] 127.0.0.1 () {38 vars in 763 bytes} [Fri May 24 12:26:31 2019] GET /static/images/logo.png => generated 3118 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /static/js/jquery-1.12.4.min.js
+[pid: 1851|app: 0|req: 2/8] 127.0.0.1 () {38 vars in 743 bytes} [Fri May 24 12:26:31 2019] GET /static/js/jquery-1.12.4.min.js => generated 3142 bytes in 693 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /static/css/reset.css
+[pid: 1851|app: 0|req: 2/9] 127.0.0.1 () {38 vars in 737 bytes} [Fri May 24 12:26:31 2019] GET /static/css/reset.css => generated 3112 bytes in 727 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/js/jquery-ui.min.js
+[pid: 1853|app: 0|req: 4/10] 127.0.0.1 () {38 vars in 735 bytes} [Fri May 24 12:26:32 2019] GET /static/js/jquery-ui.min.js => generated 3130 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /static/js/slide.js
+[pid: 1850|app: 0|req: 1/11] 127.0.0.1 () {38 vars in 719 bytes} [Fri May 24 12:26:31 2019] GET /static/js/slide.js => generated 3106 bytes in 807 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 1856)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 12:28:49 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8080 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:43001 (port auto-assigned) fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x560ec1faeea0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x560ec1faeea0 pid: 2283 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2283)
+spawned uWSGI worker 1 (pid: 2285, cores: 2)
+spawned uWSGI worker 2 (pid: 2286, cores: 2)
+spawned uWSGI worker 3 (pid: 2287, cores: 2)
+spawned uWSGI worker 4 (pid: 2289, cores: 2)
+spawned uWSGI http 1 (pid: 2290)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 2286|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 833 bytes} [Fri May 24 12:28:53 2019] GET /index/ => generated 12677 bytes in 820 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 2286|app: 0|req: 3/2] 127.0.0.1 () {38 vars in 737 bytes} [Fri May 24 12:28:54 2019] GET /static/css/main.css => generated 77 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2286|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 739 bytes} [Fri May 24 12:28:54 2019] GET /static/css/reset.css => generated 77 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2286|app: 0|req: 4/4] 127.0.0.1 () {38 vars in 736 bytes} [Fri May 24 12:28:54 2019] GET /static/js/jquery-ui.min.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2286|app: 0|req: 5/6] 127.0.0.1 () {38 vars in 736 bytes} [Fri May 24 12:28:55 2019] GET /static/js/jquery-ui.min.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2289|app: 0|req: 2/6] 127.0.0.1 () {38 vars in 744 bytes} [Fri May 24 12:28:54 2019] GET /static/js/jquery-1.12.4.min.js => generated 77 bytes in 552 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2289|app: 0|req: 2/7] 127.0.0.1 () {38 vars in 720 bytes} [Fri May 24 12:28:54 2019] GET /static/js/slide.js => generated 77 bytes in 539 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2287|app: 0|req: 1/8] 127.0.0.1 () {38 vars in 764 bytes} [Fri May 24 12:28:54 2019] GET /static/images/logo.png => generated 77 bytes in 571 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2287|app: 0|req: 2/9] 127.0.0.1 () {40 vars in 854 bytes} [Fri May 24 12:28:57 2019] GET /cart/info/ => generated 9727 bytes in 69 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 2286|app: 0|req: 6/10] 127.0.0.1 () {38 vars in 743 bytes} [Fri May 24 12:28:57 2019] GET /static/css/reset.css => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2287|app: 0|req: 3/11] 127.0.0.1 () {38 vars in 768 bytes} [Fri May 24 12:28:57 2019] GET /static/images/logo.png => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2285|app: 0|req: 2/12] 127.0.0.1 () {38 vars in 741 bytes} [Fri May 24 12:28:57 2019] GET /static/css/main.css => generated 77 bytes in 519 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2285|app: 0|req: 2/13] 127.0.0.1 () {38 vars in 748 bytes} [Fri May 24 12:28:57 2019] GET /static/js/jquery-1.12.4.min.js => generated 77 bytes in 512 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2286|app: 0|req: 7/14] 127.0.0.1 () {40 vars in 860 bytes} [Fri May 24 12:29:00 2019] GET /user/order/1 => generated 7732 bytes in 124 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 2289|app: 0|req: 3/15] 127.0.0.1 () {38 vars in 744 bytes} [Fri May 24 12:29:00 2019] GET /static/css/reset.css => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2285|app: 0|req: 3/16] 127.0.0.1 () {38 vars in 742 bytes} [Fri May 24 12:29:00 2019] GET /static/css/main.css => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2286|app: 0|req: 8/17] 127.0.0.1 () {38 vars in 769 bytes} [Fri May 24 12:29:00 2019] GET /static/images/logo.png => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2285|app: 0|req: 4/18] 127.0.0.1 () {38 vars in 749 bytes} [Fri May 24 12:29:00 2019] GET /static/js/jquery-1.12.4.min.js => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2286|app: 0|req: 9/19] 127.0.0.1 () {38 vars in 790 bytes} [Fri May 24 12:29:15 2019] GET / => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 2290)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 12:31:55 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8080 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:41043 (port auto-assigned) fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x560475e92ea0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x560475e92ea0 pid: 2460 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2460)
+spawned uWSGI worker 1 (pid: 2462, cores: 2)
+spawned uWSGI worker 2 (pid: 2463, cores: 2)
+spawned uWSGI worker 3 (pid: 2464, cores: 2)
+spawned uWSGI worker 4 (pid: 2466, cores: 2)
+spawned uWSGI http 1 (pid: 2467)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 2464|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 802 bytes} [Fri May 24 12:32:01 2019] GET /index/ => generated 12677 bytes in 855 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 2464|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 739 bytes} [Fri May 24 12:32:02 2019] GET /static/css/reset.css => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2462|app: 0|req: 2/3] 127.0.0.1 () {38 vars in 764 bytes} [Fri May 24 12:32:02 2019] GET /static/images/logo.png => generated 77 bytes in 949 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2462|app: 0|req: 2/4] 127.0.0.1 () {38 vars in 737 bytes} [Fri May 24 12:32:02 2019] GET /static/css/main.css => generated 77 bytes in 972 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2466|app: 0|req: 1/5] 127.0.0.1 () {38 vars in 744 bytes} [Fri May 24 12:32:02 2019] GET /static/js/jquery-1.12.4.min.js => generated 77 bytes in 996 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2463|app: 0|req: 2/6] 127.0.0.1 () {38 vars in 736 bytes} [Fri May 24 12:32:02 2019] GET /static/js/jquery-ui.min.js => generated 77 bytes in 1096 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2463|app: 0|req: 2/7] 127.0.0.1 () {38 vars in 720 bytes} [Fri May 24 12:32:02 2019] GET /static/js/slide.js => generated 77 bytes in 1091 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2464|app: 0|req: 3/8] 127.0.0.1 () {40 vars in 844 bytes} [Fri May 24 12:32:05 2019] GET /user/ => generated 4649 bytes in 77 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 2464|app: 0|req: 4/9] 127.0.0.1 () {38 vars in 736 bytes} [Fri May 24 12:32:05 2019] GET /static/css/main.css => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2466|app: 0|req: 2/10] 127.0.0.1 () {38 vars in 738 bytes} [Fri May 24 12:32:05 2019] GET /static/css/reset.css => generated 77 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2462|app: 0|req: 3/11] 127.0.0.1 () {38 vars in 763 bytes} [Fri May 24 12:32:05 2019] GET /static/images/logo.png => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 2467)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 13:30:29 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x557b888d4de0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x557b888d4de0 pid: 2839 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2839)
+spawned uWSGI worker 1 (pid: 2841, cores: 2)
+spawned uWSGI worker 2 (pid: 2842, cores: 2)
+spawned uWSGI worker 3 (pid: 2843, cores: 2)
+spawned uWSGI worker 4 (pid: 2845, cores: 2)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 13:35:07 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x562894a94de0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x562894a94de0 pid: 2911 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2911)
+spawned uWSGI worker 1 (pid: 2913, cores: 2)
+spawned uWSGI worker 2 (pid: 2914, cores: 2)
+spawned uWSGI worker 3 (pid: 2915, cores: 2)
+spawned uWSGI worker 4 (pid: 2917, cores: 2)
+[pid: 2913|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 869 bytes} [Fri May 24 13:35:12 2019] GET /index => generated 0 bytes in 516 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 0)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 2915|app: 0|req: 1/2] 127.0.0.1 () {44 vars in 871 bytes} [Fri May 24 13:35:13 2019] GET /index/ => generated 12677 bytes in 735 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 2915|app: 0|req: 2/3] 127.0.0.1 () {44 vars in 877 bytes} [Fri May 24 13:36:33 2019] GET /user/ => generated 4649 bytes in 58 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 2915|app: 0|req: 3/4] 127.0.0.1 () {44 vars in 890 bytes} [Fri May 24 13:36:35 2019] GET /user/order/1 => generated 7732 bytes in 140 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 2915|app: 0|req: 4/5] 127.0.0.1 () {44 vars in 899 bytes} [Fri May 24 13:36:38 2019] GET /user/address/ => generated 3262 bytes in 28 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 13:47:09 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x55f5b9a95de0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55f5b9a95de0 pid: 3157 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3157)
+spawned uWSGI worker 1 (pid: 3159, cores: 2)
+spawned uWSGI worker 2 (pid: 3160, cores: 2)
+spawned uWSGI worker 3 (pid: 3161, cores: 2)
+spawned uWSGI worker 4 (pid: 3162, cores: 2)
+[pid: 3161|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 930 bytes} [Fri May 24 13:47:12 2019] GET /user/address/ => generated 3262 bytes in 705 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 3162|app: 0|req: 1/2] 127.0.0.1 () {44 vars in 886 bytes} [Fri May 24 13:47:14 2019] GET /index/ => generated 12677 bytes in 910 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 3160|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 881 bytes} [Fri May 24 13:47:23 2019] GET /goods/7 => generated 8720 bytes in 911 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 3161|app: 0|req: 2/4] 127.0.0.1 () {44 vars in 884 bytes} [Fri May 24 13:47:30 2019] GET /list/3/1 => generated 4859 bytes in 135 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 3162|app: 0|req: 2/5] 127.0.0.1 () {42 vars in 840 bytes} [Fri May 24 14:04:25 2019] GET /index/ => generated 12677 bytes in 252 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 3160|app: 0|req: 2/6] 127.0.0.1 () {48 vars in 962 bytes} [Fri May 24 14:04:40 2019] GET / => generated 77 bytes in 22 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 3162|app: 0|req: 3/7] 127.0.0.1 () {44 vars in 869 bytes} [Fri May 24 14:04:57 2019] GET / => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 3162|app: 0|req: 4/8] 127.0.0.1 () {44 vars in 881 bytes} [Fri May 24 14:16:26 2019] GET /goods/6 => generated 8318 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 3162|app: 0|req: 5/9] 127.0.0.1 () {44 vars in 869 bytes} [Fri May 24 14:16:33 2019] GET / => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 3161|app: 0|req: 3/10] 127.0.0.1 () {42 vars in 838 bytes} [Fri May 24 14:16:56 2019] GET / => generated 77 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 3161|app: 0|req: 4/11] 127.0.0.1 () {50 vars in 953 bytes} [Fri May 24 14:17:34 2019] POST /cart/add/ => generated 67 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3162|app: 0|req: 6/12] 127.0.0.1 () {44 vars in 888 bytes} [Fri May 24 14:17:36 2019] GET /cart/info/ => generated 10421 bytes in 29 msecs (HTTP/1.1 200) 5 headers in 293 bytes (1 switches on core 0)
+[pid: 3162|app: 0|req: 7/13] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 24 14:22:46 2019] GET /index => generated 0 bytes in 6 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 1)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 3160|app: 0|req: 3/14] 127.0.0.1 () {42 vars in 797 bytes} [Fri May 24 14:22:46 2019] GET /index/ => generated 12677 bytes in 227 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 3159|app: 0|req: 1/15] 127.0.0.1 () {42 vars in 795 bytes} [Fri May 24 14:22:51 2019] GET / => generated 77 bytes in 868 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 3162|app: 0|req: 8/16] 127.0.0.1 () {40 vars in 723 bytes} [Fri May 24 14:22:52 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 3160|app: 0|req: 4/17] 127.0.0.1 () {42 vars in 797 bytes} [Fri May 24 14:25:32 2019] GET /index/ => generated 12677 bytes in 151 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 3161|app: 0|req: 5/18] 127.0.0.1 () {42 vars in 797 bytes} [Fri May 24 14:33:11 2019] GET /index/ => generated 12677 bytes in 139 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 3161|app: 0|req: 6/19] 127.0.0.1 () {44 vars in 839 bytes} [Fri May 24 14:33:17 2019] GET /goods/4 => generated 8340 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 3162|app: 0|req: 9/20] 127.0.0.1 () {42 vars in 809 bytes} [Fri May 24 14:34:16 2019] GET /user/order/1 => generated 5790 bytes in 113 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 3159|app: 0|req: 2/21] 127.0.0.1 () {44 vars in 856 bytes} [Fri May 24 14:34:34 2019] GET /user/register/ => generated 2600 bytes in 22 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 3162|app: 0|req: 10/22] 127.0.0.1 () {44 vars in 837 bytes} [Fri May 24 14:34:52 2019] GET /goods/5 => generated 8839 bytes in 85 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 3161|app: 0|req: 7/23] 127.0.0.1 () {44 vars in 840 bytes} [Fri May 24 14:34:59 2019] GET /index/ => generated 12677 bytes in 230 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 3159|app: 0|req: 3/24] 127.0.0.1 () {42 vars in 769 bytes} [Fri May 24 14:35:21 2019] GET /favicon.ico => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 3159|app: 0|req: 4/25] 127.0.0.1 () {42 vars in 840 bytes} [Fri May 24 14:35:58 2019] GET /index/ => generated 12677 bytes in 211 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 3162|app: 0|req: 11/26] 127.0.0.1 () {42 vars in 838 bytes} [Fri May 24 14:36:41 2019] GET /admin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 1)
+[pid: 3160|app: 0|req: 5/27] 127.0.0.1 () {42 vars in 877 bytes} [Fri May 24 14:36:41 2019] GET /admin/login/?next=/admin/ => generated 1962 bytes in 140 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+[pid: 3162|app: 0|req: 12/28] 127.0.0.1 () {52 vars in 1114 bytes} [Fri May 24 14:36:45 2019] POST /admin/login/?next=/admin/ => generated 0 bytes in 266 msecs (HTTP/1.1 302) 9 headers in 559 bytes (1 switches on core 0)
+[pid: 3162|app: 0|req: 13/29] 127.0.0.1 () {44 vars in 909 bytes} [Fri May 24 14:36:48 2019] GET /admin/goods/goodsspu/ => generated 10744 bytes in 145 msecs (HTTP/1.1 200) 7 headers in 396 bytes (1 switches on core 1)
+[pid: 3161|app: 0|req: 8/30] 127.0.0.1 () {44 vars in 944 bytes} [Fri May 24 14:36:49 2019] GET /admin/goods/goodsspu/28/change/ => generated 8415 bytes in 129 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+[pid: 3160|app: 0|req: 6/31] 127.0.0.1 () {52 vars in 1133 bytes} [Fri May 24 14:37:04 2019] POST /admin/goods/goodsspu/28/change/ => generated 0 bytes in 139 msecs (HTTP/1.1 302) 8 headers in 534 bytes (1 switches on core 1)
+[pid: 3161|app: 0|req: 9/32] 127.0.0.1 () {42 vars in 758 bytes} [Fri May 24 14:37:05 2019] GET /admin/jsi18n/ => generated 7722 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 24 14:43:48 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x5637197c3de0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5637197c3de0 pid: 5662 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5662)
+spawned uWSGI worker 1 (pid: 5664, cores: 2)
+spawned uWSGI worker 2 (pid: 5665, cores: 2)
+spawned uWSGI worker 3 (pid: 5667, cores: 2)
+spawned uWSGI worker 4 (pid: 5668, cores: 2)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 5665|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 840 bytes} [Fri May 24 14:44:01 2019] GET /index/ => generated 12675 bytes in 787 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 5668|app: 0|req: 1/2] 127.0.0.1 () {44 vars in 882 bytes} [Fri May 24 14:44:11 2019] GET /goods/4 => generated 8338 bytes in 649 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5668|app: 0|req: 2/3] 127.0.0.1 () {42 vars in 840 bytes} [Fri May 24 14:45:35 2019] GET /admin/ => generated 9076 bytes in 87 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 1)
+[pid: 5665|app: 0|req: 2/4] 127.0.0.1 () {42 vars in 758 bytes} [Fri May 24 14:45:39 2019] GET /admin/jsi18n/ => generated 7722 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 5665|app: 0|req: 3/5] 127.0.0.1 () {42 vars in 768 bytes} [Fri May 24 14:45:40 2019] GET /admin/jsi18n/ => generated 7722 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 5665|app: 0|req: 4/6] 127.0.0.1 () {46 vars in 1193 bytes} [Fri May 24 14:45:46 2019] GET /admin/goods/goodsspu/ => generated 10929 bytes in 179 msecs (HTTP/1.1 200) 8 headers in 480 bytes (1 switches on core 1)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 5668|app: 0|req: 3/7] 127.0.0.1 () {42 vars in 840 bytes} [Fri May 24 14:46:44 2019] GET /index/ => generated 12675 bytes in 186 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 5668|app: 0|req: 4/8] 127.0.0.1 () {42 vars in 758 bytes} [Fri May 24 14:52:00 2019] GET /admin/jsi18n/ => generated 7722 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 5668|app: 0|req: 5/9] 127.0.0.1 () {42 vars in 768 bytes} [Fri May 24 14:52:01 2019] GET /admin/jsi18n/ => generated 7722 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 5665|app: 0|req: 5/10] 127.0.0.1 () {46 vars in 1193 bytes} [Fri May 24 14:52:06 2019] GET /admin/goods/goodsspu/ => generated 10929 bytes in 70 msecs (HTTP/1.1 200) 8 headers in 480 bytes (1 switches on core 0)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 5668|app: 0|req: 6/11] 127.0.0.1 () {42 vars in 840 bytes} [Fri May 24 14:53:04 2019] GET /index/ => generated 12675 bytes in 186 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 5668|app: 0|req: 7/12] 127.0.0.1 () {40 vars in 717 bytes} [Fri May 24 14:55:59 2019] GET /user/login/ => generated 2088 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5668|app: 0|req: 8/13] 127.0.0.1 () {44 vars in 872 bytes} [Fri May 24 14:56:54 2019] GET /user/login/?next=/user/ => generated 2088 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5667|app: 0|req: 1/14] 127.0.0.1 () {44 vars in 886 bytes} [Fri May 24 14:58:17 2019] GET /user/login/?next=/user/order/1 => generated 2088 bytes in 533 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5668|app: 0|req: 9/15] 127.0.0.1 () {44 vars in 855 bytes} [Fri May 24 15:03:25 2019] GET /user/register/ => generated 2600 bytes in 6 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5668|app: 0|req: 10/16] 127.0.0.1 () {44 vars in 837 bytes} [Fri May 24 15:03:33 2019] GET /user/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 160 bytes (1 switches on core 0)
+[pid: 5667|app: 0|req: 2/17] 127.0.0.1 () {42 vars in 794 bytes} [Fri May 24 15:04:47 2019] GET /index => generated 0 bytes in 4 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 1)
+[pid: 5664|app: 0|req: 1/18] 127.0.0.1 () {44 vars in 845 bytes} [Fri May 24 15:04:49 2019] GET /user/login/ => generated 2088 bytes in 495 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 5668|app: 0|req: 11/19] 127.0.0.1 () {46 vars in 915 bytes} [Fri May 24 15:04:54 2019] GET /index/ => generated 12675 bytes in 165 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
