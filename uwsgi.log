@@ -419,3 +419,77 @@ StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
 [pid: 5664|app: 0|req: 1/18] 127.0.0.1 () {44 vars in 845 bytes} [Fri May 24 15:04:49 2019] GET /user/login/ => generated 2088 bytes in 495 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
 StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
 [pid: 5668|app: 0|req: 11/19] 127.0.0.1 () {46 vars in 915 bytes} [Fri May 24 15:04:54 2019] GET /index/ => generated 12675 bytes in 165 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Mon May 27 11:03:49 2019] ***
+compiled with version: 7.4.0 on 24 May 2019 02:46:03
+os: Linux-4.15.0-50-generic #54-Ubuntu SMP Mon May 6 18:46:08 UTC 2019
+nodename: icmelon-virtual-machine
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/icmelon/virtual_environment/django/django/bin/uwsgi
+chdir() to /home/icmelon/virtual_environment/django/django/bin/dailyfresh
+your processes number limit is 7707
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+PEP 405 virtualenv detected: /home/icmelon/virtual_environment/django/django
+Set PythonHome to /home/icmelon/virtual_environment/django/django
+Python main interpreter initialized at 0x5644ba831e40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5644ba831e40 pid: 2605 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2605)
+spawned uWSGI worker 1 (pid: 2607, cores: 2)
+spawned uWSGI worker 2 (pid: 2608, cores: 2)
+spawned uWSGI worker 3 (pid: 2610, cores: 2)
+spawned uWSGI worker 4 (pid: 2611, cores: 2)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 2610|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 828 bytes} [Mon May 27 11:05:11 2019] GET / => generated 77 bytes in 844 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+None 设置缓存
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 2611|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 840 bytes} [Mon May 27 11:05:17 2019] GET /index/ => generated 12675 bytes in 917 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2608|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 881 bytes} [Mon May 27 11:05:23 2019] GET /goods/1 => generated 8808 bytes in 773 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 2611|app: 0|req: 2/4] 127.0.0.1 () {44 vars in 893 bytes} [Mon May 27 11:05:45 2019] GET /user/login/ => generated 2088 bytes in 22 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 2610|app: 0|req: 2/5] 127.0.0.1 () {52 vars in 1073 bytes} [Mon May 27 11:05:51 2019] POST /user/login/ => generated 0 bytes in 220 msecs (HTTP/1.1 302) 8 headers in 540 bytes (1 switches on core 1)
+StrictRedis<ConnectionPool<Connection<host=127.0.0.1,port=6379,db=8>>>
+[pid: 2610|app: 0|req: 3/6] 127.0.0.1 () {46 vars in 915 bytes} [Mon May 27 11:05:51 2019] GET /index/ => generated 12677 bytes in 223 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 2607|app: 0|req: 1/7] 127.0.0.1 () {44 vars in 887 bytes} [Mon May 27 11:05:54 2019] GET /cart/info/ => generated 10421 bytes in 653 msecs (HTTP/1.1 200) 5 headers in 293 bytes (1 switches on core 0)
+[pid: 2610|app: 0|req: 4/8] 127.0.0.1 () {50 vars in 962 bytes} [Mon May 27 11:05:56 2019] POST /cart/update/ => generated 67 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 2611|app: 0|req: 3/9] 127.0.0.1 () {50 vars in 962 bytes} [Mon May 27 11:05:57 2019] POST /cart/update/ => generated 67 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 2611|app: 0|req: 4/10] 127.0.0.1 () {52 vars in 1072 bytes} [Mon May 27 11:05:59 2019] POST /order/place/ => generated 5348 bytes in 41 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+user:21 times:0 stock:10
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 1.857 seconds.
+Prefix dict has been built succesfully.
+[pid: 2610|app: 0|req: 5/11] 127.0.0.1 () {50 vars in 966 bytes} [Mon May 27 11:06:10 2019] POST /order/commit/ => generated 61 bytes in 1962 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 2611|app: 0|req: 5/12] 127.0.0.1 () {44 vars in 897 bytes} [Mon May 27 11:06:15 2019] GET /user/order/1 => generated 7031 bytes in 84 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 2611|app: 0|req: 6/13] 127.0.0.1 () {44 vars in 897 bytes} [Mon May 27 11:06:20 2019] GET /user/order/2 => generated 7085 bytes in 46 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 2610|app: 0|req: 6/14] 127.0.0.1 () {44 vars in 897 bytes} [Mon May 27 11:06:23 2019] GET /user/order/3 => generated 7038 bytes in 78 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 2611|app: 0|req: 7/15] 127.0.0.1 () {44 vars in 897 bytes} [Mon May 27 11:07:43 2019] GET /user/order/1 => generated 7031 bytes in 48 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 2610|app: 0|req: 7/16] 127.0.0.1 () {44 vars in 883 bytes} [Mon May 27 11:07:50 2019] GET /user/ => generated 4657 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 2608|app: 0|req: 2/17] 127.0.0.1 () {44 vars in 890 bytes} [Mon May 27 11:07:51 2019] GET /user/order/1 => generated 7031 bytes in 56 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 2611|app: 0|req: 8/18] 127.0.0.1 () {44 vars in 899 bytes} [Mon May 27 11:07:51 2019] GET /user/address/ => generated 3262 bytes in 22 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
