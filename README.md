@@ -1,4 +1,3 @@
-# test_projects
-study only
+Study only projects, it is used for test my learning.
 1. dailyfresh
-a Django project, E-commerce website
+a E-commerce website, use Django.
