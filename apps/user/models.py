@@ -7,8 +7,7 @@ class User(AbstractUser, BaseModel):
 	   继承了BaseModel因此无需继承models.Model
 	   继承了AbstractUser，是Django自带的用户注册管理系统'''
 	class Meta:
-		'''重置了表名
-		   重置了该表在admin界面的单/复数显示名'''
+		'''指定了表名，指定了该表在admin界面的单/复数显示名'''
 		db_table = 'df_user'
 		verbose_name = '用户'
 		verbose_name_plural = verbose_name
@@ -29,8 +28,7 @@ class AddressManager(models.Manager):
 
 
 class Address(BaseModel):
-	'''用户收件地址模型类
-	   注意区分字段与Meta中verbose_name不同'''
+	'''用户收件地址模型类，注意区分字段与Meta中verbose_name不同'''
 	user = models.ForeignKey('User', verbose_name='所属账号', on_delete=models.CASCADE)
 	receiver = models.CharField(max_length=20, verbose_name='收件人')
 	addr = models.CharField(max_length=256, verbose_name='收件地址')

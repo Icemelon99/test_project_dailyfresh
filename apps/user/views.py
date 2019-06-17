@@ -79,7 +79,6 @@ class ActiveView(View):
 			user.save()
 			# 跳转到登录页面
 			return redirect(reverse('user:login'))
-
 		except SignatureExpired as e:
 			return HttpResponse('激活链接已过期')
 
@@ -118,7 +117,6 @@ class LoginView(View):
 				# 用户已激活
 				# 记录用户的登录状态
 				login(request, user)
-				
 				# 判断是否需要记住用户名
 				if remember == 'on':
 					response.set_cookie('username', username, max_age=7*24*3600)
@@ -126,7 +124,6 @@ class LoginView(View):
 					response.delete_cookie('username')
 				# 返回应答
 				return response
-
 			else:
 				return render(request, 'login.html', {'errmsg': '用户未激活，请重新激活'})
 		else:
@@ -234,7 +231,6 @@ class UserAddressView(LoginRequiredMixin, View):
 		zipcode = request.POST.get('zipcode')
 		phone = request.POST.get('phone')
 		if not all([receiver, addr, phone]):
-			# 解决直接render时默认地址无法显示的问题，如下手机号不规范直接render后page/address参数都没有传入，因此获取不到，也可使用js在模板上解决
 			page = 'address'
 			user = request.user
 			address	= Address.objects.get_default_address(user)
@@ -247,12 +243,11 @@ class UserAddressView(LoginRequiredMixin, View):
 		user = request.user
 		# 使用自定义的模型管理器类
 		address	= Address.objects.get_default_address(user)
-		# 判断新添加的地址是否为收货地址
+		# 判断新添加的地址是否为首个地址
 		if address:
 			is_default = False
 		else:
 			is_default = True
-
 		# 添加收货地址
 		Address.objects.create(user=user, 
 							   receiver=receiver, 
@@ -262,5 +257,4 @@ class UserAddressView(LoginRequiredMixin, View):
 							   is_default=is_default)
 		# 返回应答，刷新地址页面，以get方式再访问当前页面
 		return redirect(reverse('user:address'))
-
-		#此处可以添加让用户在多个收货地址中选择默认收货地址的功能，需要在模板中显示用户的所有收货地址
+		#可以添加让用户在多个收货地址中选择默认收货地址的功能，需要在模板中显示用户的所有收货地址

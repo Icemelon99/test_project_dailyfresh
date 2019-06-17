@@ -30,13 +30,10 @@ def generate_static_index_html():
 	'''产生首页的静态页面'''
 	# 获取商品的种类信息
 	types = GoodsType.objects.all()
-
 	# 获取首页轮播商品信息
 	goods_banners = IndexGoodsBanner.objects.all().order_by('index')
-
 	# 获取首页促销活动信息
 	promotion_banners = IndexPromotionBanner.objects.all().order_by('index')
-
 	# 获取首页分类商品展示信息，由于不同种类的商品展示信息存储在同一个表中，因此需要对其进行分类，并对每一个种类的商品信息进行查询
 	for type in types:
 		title_banners = IndexTypeGoodsBanner.objects.filter(types=type, display_type=0)

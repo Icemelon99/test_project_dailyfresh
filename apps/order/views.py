@@ -203,7 +203,6 @@ class OrderCommitView(View):
 											 total_count=total_count)
 			if order.pay_method == 1:
 				order.order_status = 2
-				order.save()
 			# 获取订单商品表的参数
 			conn = get_redis_connection('default')
 			cart_key = 'cart_{}'.format(user.id)

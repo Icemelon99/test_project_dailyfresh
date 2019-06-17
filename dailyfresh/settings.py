@@ -27,9 +27,7 @@ SECRET_KEY = 'b*@jq3o&62vyixmjlvteq&fi@+qa^c#s(cy-x+6#1idh1ubg5v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -79,10 +77,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dailyfresh.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -96,7 +92,7 @@ DATABASES = {
 
 # 指定django认证系统使用的模型类
 AUTH_USER_MODEL='user.User'
-# 设置不检测用户的活跃状体
+# 设置不检测用户的活跃状态
 AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.AllowAllUsersModelBackend']
 
@@ -121,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
-
+# 配置使用中文
 LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'Asia/Shanghai'
@@ -173,6 +169,7 @@ SESSION_CACHE_ALIAS = "default"
 
 
 LOGIN_URL = '/user/login/'
+
 # 设置Django的文件存储类，若不设置则默认为系统自带的文件存储类
 DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FDFSStorage'
 # 设置fdfs所需要的参数

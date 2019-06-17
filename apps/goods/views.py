@@ -71,10 +71,8 @@ class DetailView(View):
 
 		# 获取商品的分类信息
 		types = GoodsType.objects.all()
-
 		# 获取商品的评论信息，[对评论内容进行筛选]
 		sku_orders = OrderGoods.objects.filter(sku=sku)
-
 		# 获取该种类新品，通过创建时间排序，并切片取前两个
 		new_skus = GoodsSKU.objects.filter(types=sku.types).order_by('-create_time')[:2]
 		# 获取同一个SPU其他规格的商品
@@ -95,7 +93,6 @@ class DetailView(View):
 			conn.lpush(history_key, goods_id)
 			# 设置只保存用户最新浏览的5条信息
 			conn.ltrim(history_key, 0, 4)
-
 		else:
 			cart_count = 0
 		# 此处应该设置登录后跳转回原链接
